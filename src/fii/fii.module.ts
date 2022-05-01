@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { FII } from 'src/database/models/fii.model';
+import { FII } from '../database/models/fii.model';
 import CreateFIIResolver from './create-fii/create-fii.resolver';
 import CreateFIIService from './create-fii/create-fii.service';
 import DeleteFIIResolver from './delete-fii/delete-fii.resolver';
