@@ -10,6 +10,7 @@ import { ApolloDriver } from '@nestjs/apollo';
 import { ScrapingModule } from './crawler/scraping.module';
 import { ExemploModule } from './exemplo/exemplo.module';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -44,6 +45,7 @@ import { UserModule } from './user/user.module';
       }),
       inject: [ConfigService],
     }),
+    AuthModule,
     FiiModule,
     ScrapingModule,
     ExemploModule,
