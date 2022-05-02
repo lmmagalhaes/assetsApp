@@ -8,7 +8,6 @@ import { AppService } from './app.service';
 import FiiModule from './fii/fii.module';
 import { ApolloDriver } from '@nestjs/apollo';
 import { ScrapingModule } from './crawler/scraping.module';
-import { ExemploModule } from './exemplo/exemplo.module';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 
@@ -48,7 +47,6 @@ import { AuthModule } from './auth/auth.module';
     AuthModule,
     FiiModule,
     ScrapingModule,
-    ExemploModule,
     UserModule,
   ],
   controllers: [AppController],
