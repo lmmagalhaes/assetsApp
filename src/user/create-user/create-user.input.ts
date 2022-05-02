@@ -8,4 +8,7 @@ export default class CreateUserInput {
 
   @Field(() => String)
   email: User['email'];
+
+  @Field(() => String)
+  password: User['password'];
 }
