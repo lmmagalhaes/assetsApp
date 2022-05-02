@@ -1,5 +1,5 @@
-import { UseGuards } from '@nestjs/common';
 import { Query, Resolver } from '@nestjs/graphql';
+import { UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../../auth/shared/jwt-auth.guard';
 import { FII } from '../../database/models/fii.model';
 import ListFIIsService from './list-fii.service';
