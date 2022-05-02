@@ -9,6 +9,8 @@ import ListUsersService from './list-user/list-user.service';
 import ListUsersResolver from './list-user/list-user.resolver';
 import UpdateUserService from './update-user/update-user.service';
 import UpdateUserResolver from './update-user/update-user.resolver';
+import GetUserByEmailService from './get-user-by-email/get-user-email.service';
+import GetUserByEmailResolver from './get-user-by-email/get-user-email.resolver';
 
 @Module({
   imports: [TypeOrmModule.forFeature([User])],
@@ -17,6 +19,8 @@ import UpdateUserResolver from './update-user/update-user.resolver';
     CreateUserResolver,
     GetOneUserService,
     GetOneUserResolver,
+    GetUserByEmailService,
+    GetUserByEmailResolver,
     ListUsersService,
     ListUsersResolver,
     UpdateUserService,
