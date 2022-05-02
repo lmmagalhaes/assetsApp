@@ -1,5 +1,5 @@
 import { Field, InputType } from '@nestjs/graphql';
-import { FII } from 'src/database/models/fii.model';
+import { FII } from '../../database/models/fii.model';
 
 @InputType()
 export default class CreateFIIInput {

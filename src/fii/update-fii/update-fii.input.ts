@@ -1,5 +1,5 @@
 import { Field, ID, InputType, PartialType } from '@nestjs/graphql';
-import { FII } from 'src/database/models/fii.model';
+import { FII } from '../../database/models/fii.model';
 import CreateFIIInput from '../create-fii/create-fii.input';
 
 @InputType()

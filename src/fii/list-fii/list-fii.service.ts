@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { FII } from 'src/database/models/fii.model';
+import { FII } from '../../database/models/fii.model';
 import { Repository } from 'typeorm';
 
 @Injectable()

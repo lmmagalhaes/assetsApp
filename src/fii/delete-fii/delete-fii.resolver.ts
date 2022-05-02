@@ -1,5 +1,5 @@
 import { Args, ID, Mutation, Resolver } from '@nestjs/graphql';
-import { FII } from 'src/database/models/fii.model';
+import { FII } from '../../database/models/fii.model';
 import DeleteFIIService from './delete-fii.service';
 
 @Resolver(() => FII)

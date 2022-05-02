@@ -1,5 +1,5 @@
 import { Query, Resolver } from '@nestjs/graphql';
-import { FII } from 'src/database/models/fii.model';
+import { FII } from '../../database/models/fii.model';
 import ListFIIsService from './list-fii.service';
 
 @Resolver(() => FII)

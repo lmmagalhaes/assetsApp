@@ -1,5 +1,5 @@
 import { Args, Mutation, Resolver } from '@nestjs/graphql';
-import { FII } from 'src/database/models/fii.model';
+import { FII } from '../../database/models/fii.model';
 import UpdateFIIInput from './update-fii.input';
 import UpdateFIIService from './update-fii.service';
 
