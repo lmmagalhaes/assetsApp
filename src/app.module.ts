@@ -10,6 +10,7 @@ import { ApolloDriver } from '@nestjs/apollo';
 import { ScrapingModule } from './crawler/scraping.module';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
+import { resolve } from 'path';
 
 @Module({
   imports: [
@@ -40,7 +41,9 @@ import { AuthModule } from './auth/auth.module';
         autoLoadEntities: true,
         logging: true,
         keepConnectionAlive: false,
-        synchronize: true,
+        synchronize: false,
+        migrationsRun: true,
+        migrations: [resolve(__dirname, './migrations/*.{ts,js}')],
       }),
       inject: [ConfigService],
     }),
