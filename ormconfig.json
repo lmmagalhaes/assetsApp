@@ -1,0 +1,15 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5433,
+  "username": "assets",
+  "password": "assets",
+  "database": "assets",
+  "entities": ["./dist/**/*.models{.ts,.js}"],
+  "migrations": ["./dist/**/*.ts"],
+  "synchronize": false,
+  "logging": true,
+  "cli": {
+    "migrationsDir": "./src/migrations/"
+  }
+}
