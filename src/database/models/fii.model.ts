@@ -1,9 +1,11 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import Dates from './dates.model';
+import { User } from './user.model';
 
 @ObjectType()
 @Entity()
-export class FII {
+export class FII extends Dates {
   @Field(() => ID)
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -15,4 +17,7 @@ export class FII {
   @Field()
   @Column()
   amount: number;
+
+  @ManyToOne(() => User, (user) => user.fii)
+  user: User;
 }
