@@ -39,7 +39,7 @@ import { resolve } from 'path';
         password: configService.get('POSTGRES_PASSWORD_PRODUCTION'),
         database: configService.get('POSTGRES_DB_PRODUCTION'),
         autoLoadEntities: true,
-        ssl: true,
+        ssl: { rejectUnauthorized: false },
         logging: true,
         keepConnectionAlive: false,
         synchronize: true,

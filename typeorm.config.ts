@@ -10,7 +10,7 @@ const typeormConfig: ConnectionOptions = {
   database: process.env.POSTGRES_DB_PRODUCTION,
   entities: [resolve(__dirname, './src/**/*.model.{js,ts}')],
   dropSchema: false,
-  ssl: true,
+  ssl: { rejectUnauthorized: false },
   synchronize: true,
   migrations: [resolve(__dirname, './src/migrations/**/*.{js,ts}')],
   migrationsRun: false,
