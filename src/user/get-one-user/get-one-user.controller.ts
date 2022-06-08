@@ -1,14 +1,14 @@
-import { Args, ID, Query, Resolver } from '@nestjs/graphql';
+import { Controller, Get, Param } from '@nestjs/common';
 import { User } from '../../database/models/user.model';
 import GetOneUserService from './get-one-user.service';
 
-@Resolver(() => User)
-export default class GetOneUserResolver {
+@Controller('user')
+export default class GetOneUserController {
   constructor(private service: GetOneUserService) {}
 
-  @Query(() => User)
+  @Get(':id')
   async user(
-    @Args('id', { type: () => ID }) id: User['id'],
+    @Param('id') id: User['id'],
   ): ReturnType<GetOneUserService['get']> {
     return this.service.get(id);
   }

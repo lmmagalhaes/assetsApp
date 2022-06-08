@@ -1,17 +1,16 @@
-import { UseGuards } from '@nestjs/common';
-import { Args, ID, Mutation, Resolver } from '@nestjs/graphql';
+import { Controller, Delete, Param, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../../auth/shared/jwt-auth.guard';
 import { FII } from '../../database/models/fii.model';
 import DeleteFIIService from './delete-fii.service';
 
-@Resolver(() => FII)
-export default class DeleteFIIResolver {
+@Controller('fii')
+export default class DeleteFIIController {
   constructor(private service: DeleteFIIService) {}
 
   @UseGuards(JwtAuthGuard)
-  @Mutation(() => Boolean)
+  @Delete(':id')
   async deleteFii(
-    @Args('id', { type: () => ID }) id: FII['id'],
+    @Param('id') id: FII['id'],
   ): ReturnType<DeleteFIIService['delete']> {
     return this.service.delete(id);
   }

@@ -1,12 +1,11 @@
-import { Query, Resolver } from '@nestjs/graphql';
-import { User } from '../../database/models/user.model';
+import { Controller, Get } from '@nestjs/common';
 import ListUsersService from './list-user.service';
 
-@Resolver(() => User)
-export default class ListUsersResolver {
+@Controller('user')
+export default class ListUsersController {
   constructor(private service: ListUsersService) {}
 
-  @Query(() => [User])
+  @Get()
   async users(): ReturnType<ListUsersService['list']> {
     return this.service.list();
   }

@@ -1,15 +1,14 @@
-import { Args, Query, Resolver } from '@nestjs/graphql';
-import { User } from '../../database/models/user.model';
+import { Controller, Get, Param } from '@nestjs/common';
 import GetUserByEmailInput from './get-user-by-email.input';
 import GetUserByEmailService from './get-user-email.service';
 
-@Resolver(() => User)
-export default class GetUserByEmailResolver {
+@Controller('user')
+export default class GetUserByEmailController {
   constructor(private service: GetUserByEmailService) {}
 
-  @Query(() => User)
+  @Get(':email')
   async user(
-    @Args('input') input: GetUserByEmailInput,
+    @Param('input') input: GetUserByEmailInput,
   ): ReturnType<GetUserByEmailService['getByEmail']> {
     return this.service.getByEmail(input.email);
   }

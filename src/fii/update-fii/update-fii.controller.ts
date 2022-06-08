@@ -1,18 +1,16 @@
-import { UseGuards } from '@nestjs/common';
-import { Args, Mutation, Resolver } from '@nestjs/graphql';
+import { Body, Controller, Put, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../../auth/shared/jwt-auth.guard';
-import { FII } from '../../database/models/fii.model';
 import UpdateFIIInput from './update-fii.input';
 import UpdateFIIService from './update-fii.service';
 
-@Resolver(() => FII)
-export default class UpdateFIIResolver {
+@Controller('fii')
+export default class UpdateFIIController {
   constructor(private service: UpdateFIIService) {}
 
   @UseGuards(JwtAuthGuard)
-  @Mutation(() => FII)
+  @Put()
   async updateFii(
-    @Args('input') input: UpdateFIIInput,
+    @Body() input: UpdateFIIInput,
   ): ReturnType<UpdateFIIService['update']> {
     return this.service.update(input);
   }
