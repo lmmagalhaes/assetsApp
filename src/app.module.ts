@@ -24,10 +24,6 @@ import { resolve } from 'path';
         PORT: Joi.number().default(3000),
       }),
     }),
-    GraphQLModule.forRoot({
-      autoSchemaFile: true,
-      driver: ApolloDriver,
-    }),
     TypeOrmModule.forRootAsync({
       useFactory: async (
         configService: ConfigService,
