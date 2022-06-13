@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from '../database/models/user.model';
 import { FII } from '../database/models/fii.model';
 import CreateFIIController from './create-fii/create-fii.controller';
 import CreateFIIService from './create-fii/create-fii.service';
@@ -11,7 +12,7 @@ import UpdateFIIController from './update-fii/update-fii.controller';
 import UpdateFIIService from './update-fii/update-fii.service';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([FII])],
+  imports: [TypeOrmModule.forFeature([FII, User])],
   controllers: [
     CreateFIIController,
     DeleteFIIController,
