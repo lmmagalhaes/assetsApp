@@ -10,6 +10,8 @@ import ListFIIsController from './list-fii/list-fii.controller';
 import ListFIIsService from './list-fii/list-fii.service';
 import UpdateFIIController from './update-fii/update-fii.controller';
 import UpdateFIIService from './update-fii/update-fii.service';
+import ListFIIsByUserService from './list-fii-by-user/list-fii.service';
+import ListFIIsByUserController from './list-fii-by-user/list-fii.controller';
 
 @Module({
   imports: [TypeOrmModule.forFeature([FII, User])],
@@ -17,12 +19,14 @@ import UpdateFIIService from './update-fii/update-fii.service';
     CreateFIIController,
     DeleteFIIController,
     ListFIIsController,
+    ListFIIsByUserController,
     UpdateFIIController,
   ],
   providers: [
     CreateFIIService,
     DeleteFIIService,
     ListFIIsService,
+    ListFIIsByUserService,
     UpdateFIIService,
   ],
 })

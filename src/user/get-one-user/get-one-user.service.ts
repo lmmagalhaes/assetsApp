@@ -10,7 +10,10 @@ export default class GetOneUserService {
     private userRepository: Repository<User>,
   ) {}
 
-  async get(id: User['id']): Promise<User> {
-    return this.userRepository.findOne(id);
+  async get(email: User['email']): Promise<User> {
+    return this.userRepository.findOne({
+      select: ['id', 'name', 'email'],
+      where: { email },
+    });
   }
 }

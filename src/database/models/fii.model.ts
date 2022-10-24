@@ -14,5 +14,5 @@ export class FII extends Dates {
   amount: number;
 
   @ManyToOne(() => User, (user) => user.fii, { cascade: true })
-  user: User;
+  userId: User;
 }

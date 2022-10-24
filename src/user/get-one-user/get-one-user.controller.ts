@@ -6,10 +6,10 @@ import GetOneUserService from './get-one-user.service';
 export default class GetOneUserController {
   constructor(private service: GetOneUserService) {}
 
-  @Get(':id')
+  @Get(':email')
   async user(
-    @Param('id') id: User['id'],
+    @Param('email') email: User['email'],
   ): ReturnType<GetOneUserService['get']> {
-    return this.service.get(id);
+    return this.service.get(email);
   }
 }

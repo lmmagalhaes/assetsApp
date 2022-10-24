@@ -15,12 +15,13 @@ export class User extends Dates {
   name: string;
 
   @Field()
-  @Column({ unique: true })
+  // TODO: Verify if have null values on a database
+  @Column({ unique: true, nullable: true })
   email: string;
 
   @Column('text')
   password: string;
 
-  @OneToMany(() => FII, (fii) => fii.user)
+  @OneToMany(() => FII, (fii) => fii.userId)
   fii: FII[];
 }
