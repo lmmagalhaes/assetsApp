@@ -22,6 +22,6 @@ export class User extends Dates {
   @Column('text')
   password: string;
 
-  @OneToMany(() => FII, (fii) => fii.userId)
+  @OneToMany(() => FII, (fii) => fii.userIdId)
   fii: FII[];
 }

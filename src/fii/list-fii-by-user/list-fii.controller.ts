@@ -7,10 +7,10 @@ export default class ListFIIsByUserController {
   constructor(private service: ListFIIsByUserService) {}
 
   @UseGuards(JwtAuthGuard)
-  @Get(':id')
+  @Get(':userId')
   async listFiiByUser(
-    @Param('id') userId: string,
+    @Param('userId') userIdId: string,
   ): ReturnType<ListFIIsByUserService['list']> {
-    return this.service.list(userId);
+    return this.service.list(userIdId);
   }
 }

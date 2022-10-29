@@ -1,4 +1,10 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import Dates from './dates.model';
 import { User } from './user.model';
 
@@ -14,5 +20,6 @@ export class FII extends Dates {
   amount: number;
 
   @ManyToOne(() => User, (user) => user.fii, { cascade: true })
-  userId: User;
+  @JoinColumn({ name: 'userIdId' })
+  userIdId: User;
 }

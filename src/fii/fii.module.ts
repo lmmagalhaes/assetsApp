@@ -12,6 +12,7 @@ import UpdateFIIController from './update-fii/update-fii.controller';
 import UpdateFIIService from './update-fii/update-fii.service';
 import ListFIIsByUserService from './list-fii-by-user/list-fii.service';
 import ListFIIsByUserController from './list-fii-by-user/list-fii.controller';
+import { ScrapingService } from 'src/crawler/scraping.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([FII, User])],
@@ -28,6 +29,7 @@ import ListFIIsByUserController from './list-fii-by-user/list-fii.controller';
     ListFIIsService,
     ListFIIsByUserService,
     UpdateFIIService,
+    ScrapingService,
   ],
 })
 export default class FiiModule {}

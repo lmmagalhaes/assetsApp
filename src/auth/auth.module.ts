@@ -18,7 +18,7 @@ import GetUserByEmailService from '../user/get-user-by-email/get-user-email.serv
     PassportModule,
     JwtModule.register({
       secret: jwtConstants.secret,
-      signOptions: { expiresIn: '3600s' },
+      signOptions: { expiresIn: '10 days' },
     }),
   ],
   controllers: [AuthController],
